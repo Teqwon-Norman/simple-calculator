@@ -1,10 +1,16 @@
 #include <iostream>
+#include <typeinfo>
 #include "calculator.h"
 
 // Constructor
 // Initialize data members to 0 doubles
 
 Calculator::Calculator() : result(0.0), mem(0.0) {}
+
+void Calculator::welcome() const
+{
+    std::cout << "\n\nEnter an operation 1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Square\n6. Square Root\n7. Exit";
+}
 
 void Calculator::add()
 {
@@ -75,45 +81,53 @@ void Calculator::sqrt()
     std::cout << "The result is " << result;
 }
 
-void Calculator::setMem()
+double Calculator::parseInput(const std::string &value) const
 {
-    std::string a;
-    std::cout << "Enter a number: ";
-    std::cin >> a;
-
-    mem = parseInput(a);
-    std::cout << "The mem is " << mem;
-}
-
-void Calculator::printMem() const
-{
-    std::cout << "The mem is " << mem;
-}
-
-double Calculator::parseInput(const std::string &input) const
-{
-    if (input == "result")
+    // saving the string value as a double IF it is a string that contains an integer value
+    double check = std::stod(value);
+    // then check to see if the value is a double to return otherwise we just initialize the value to 0 just so itll compile bug free
+    if (typeid(check).name() == typeid(double).name())
     {
-        return result;
-    }
-
-    else if (input == "result")
-    {
-        return mem;
+        return check;
     }
 
     else
     {
-        return std::stod(input);
+        return 0;
     }
 }
 
-void Calculator::welcome() const
+void Calculator::parseOperation(const int &operation)
 {
-    std::cout << "\n\nEnter an operation (+, -, /, *, sqrt, square, change, setmem, printmem) or exit\n";
-}
+    int operation;
+    switch (operation)
+    {
+    case 1:
+        add();
+        break;
 
-void Calculator::parseOperation(const std::string &input)
-{
-    // Do a switch case for operations here
+    case 2:
+        subtract();
+        break;
+
+    case 3:
+        multiply();
+        break;
+
+    case 4:
+        divide();
+        break;
+
+    case 5:
+        square();
+        break;
+
+    case 6:
+        sqrt();
+        break;
+
+    case 7:
+        // exit();
+        break;
+    }
 }
