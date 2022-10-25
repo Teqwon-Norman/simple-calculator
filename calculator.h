@@ -21,7 +21,7 @@ public:
     void sqrt();
 
     virtual void menu() const;
+    virtual void exit() const;
     virtual void parseOperation(const int &);
 };
-
 #endif

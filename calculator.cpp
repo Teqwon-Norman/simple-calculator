@@ -75,6 +75,11 @@ void Calculator::sqrt()
     std::cout << "The result is " << result;
 }
 
+void Calculator::exit() const
+{
+    std::cout << "\nThank you for using Calculator++";
+}
+
 void Calculator::parseOperation(const int &operation)
 {
     int operation;
@@ -105,7 +110,7 @@ void Calculator::parseOperation(const int &operation)
         break;
 
     case 7:
-        // exit();
+        exit();
         break;
     }
 }
