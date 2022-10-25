@@ -8,20 +8,22 @@
 
 class Scientific : public Calculator
 {
-    public:
-        Scientific(); // constructor
-        virtual ~Scientific() = default;
-        virtual void menu() const override;
-        virtual void parseOperation(const int &) override;
+private:
+    double result;
 
-        // scientific operations
-        void sin();
-        void cos();
-        void tan();
-        void ln();
-        void log();
-        void abs();
-        void pow();
+public:
+    Scientific();
+
+    void sin();
+    void cos();
+    void tan();
+    void ln();
+    void log();
+    void abs();
+    void pow();
+
+    virtual void menu() const override;
+    virtual void exit() const override;
+    virtual void parseOperation(const int &) override;
 };
-
 #endif
