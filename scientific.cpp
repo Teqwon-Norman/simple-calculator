@@ -3,42 +3,36 @@
 
 void Scientific::menu() const
 {
-    std::cout << "\n\nEnter an operation 1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Square\n6. Square Root\n7. Exit";
+    std::cout << "\n\nEnter an operation 1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Square\n6. Square Root\n7. Sin\n8. Cos\n9. Tan\n10. Ln\n11. Log\n12. Abs\n13. Pow\n14. Exit";
 }
 
 void Scientific::sin()
 {
-    double a, b;
+    double a;
     std::cout << "Enter the first number";
     std::cin >> a;
-    std::cout << "Enter the second number";
-    std::cin >> b;
 
-    result = a + b;
+    result = std::sin(a);
     std::cout << "The result is " << result;
 }
 
 void Scientific::cos()
 {
-    double a, b;
+    double a;
     std::cout << "Enter the first number";
     std::cin >> a;
-    std::cout << "Enter the second number";
-    std::cin >> b;
 
-    result = a - b;
+    result = std::cos(a);
     std::cout << "The result is " << result;
 }
 
 void Scientific::tan()
 {
-    double a, b;
+    double a;
     std::cout << "Enter the first number";
     std::cin >> a;
-    std::cout << "Enter the second number";
-    std::cin >> b;
 
-    result = a * b;
+    result = std::tan(a);
     std::cout << "The result is " << result;
 }
 
@@ -121,6 +115,34 @@ void Scientific::parseOperation(const int &operation)
         break;
 
     case 7:
+        sin();
+        break;
+
+    case 8:
+        cos();
+        break;
+
+    case 9:
+        tan();
+        break;
+
+    case 10:
+        ln();
+        break;
+
+    case 11:
+        log();
+        break;
+
+    case 12:
+        abs();
+        break;
+
+    case 13:
+        pow();
+        break;
+
+    case 14:
         exit();
         break;
     }
