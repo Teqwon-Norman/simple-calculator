@@ -1,0 +1,3 @@
+C:/Users/teqwo/OneDrive/Desktop/Projects/C++/simple-calculator/cmake-build-debug/CMakeFiles/simple_calculator.dir
+C:/Users/teqwo/OneDrive/Desktop/Projects/C++/simple-calculator/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/teqwo/OneDrive/Desktop/Projects/C++/simple-calculator/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -12,7 +12,8 @@ private:
     double result;
 
 public:
-    Scientific();
+    Scientific() { result = 0.0; };
+    ~Scientific();
 
     void sin();
     void cos();
@@ -22,8 +23,6 @@ public:
     void abs();
     void pow();
 
-    virtual void menu() const override;
-    virtual void exit() const override;
-    virtual void parseOperation(const int &) override;
+    void menu() const;
 };
 #endif

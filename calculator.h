@@ -2,16 +2,23 @@
 #define CALCULATOR_H
 
 #include <string>
-#include <array>
 #include <cmath>
 
 class Calculator
 {
 private:
     double result;
+    double memory;
+    bool useMemory;
 
 public:
-    Calculator();
+
+    Calculator() // constructor
+    {
+        result = 0.0;
+        memory = 0.0;
+        useMemory = true;
+    }
 
     void add();
     void subtract();
@@ -19,9 +26,12 @@ public:
     void divide();
     void square();
     void sqrt();
+    void clearScreen() const;
+    void pauseExecution();
+    double zeroExceptionHandling(double n);
+    void deactivateMemory() { useMemory = false; };
+    std::string saveMemoryActivated() const;
+    int menu() const;
 
-    virtual void menu() const;
-    virtual void exit() const;
-    virtual void parseOperation(const int &);
 };
 #endif

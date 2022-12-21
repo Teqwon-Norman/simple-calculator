@@ -80,70 +80,64 @@ void Scientific::pow()
     std::cout << "The result is " << result;
 }
 
-void Scientific::exit() const
-{
-    std::cout << "\nThank you for using Calculator++";
-}
-
-void Scientific::parseOperation(const int &operation)
-{
-    int operation;
-    switch (operation)
-    {
-    case 1:
-        add();
-        break;
-
-    case 2:
-        subtract();
-        break;
-
-    case 3:
-        multiply();
-        break;
-
-    case 4:
-        divide();
-        break;
-
-    case 5:
-        square();
-        break;
-
-    case 6:
-        sqrt();
-        break;
-
-    case 7:
-        sin();
-        break;
-
-    case 8:
-        cos();
-        break;
-
-    case 9:
-        tan();
-        break;
-
-    case 10:
-        ln();
-        break;
-
-    case 11:
-        log();
-        break;
-
-    case 12:
-        abs();
-        break;
-
-    case 13:
-        pow();
-        break;
-
-    case 14:
-        exit();
-        break;
-    }
-}
+//void Scientific::parseOperation(const int &operation)
+//{
+//    int operation;
+//    switch (operation)
+//    {
+//    case 1:
+//        add();
+//        break;
+//
+//    case 2:
+//        subtract();
+//        break;
+//
+//    case 3:
+//        multiply();
+//        break;
+//
+//    case 4:
+//        divide();
+//        break;
+//
+//    case 5:
+//        square();
+//        break;
+//
+//    case 6:
+//        sqrt();
+//        break;
+//
+//    case 7:
+//        sin();
+//        break;
+//
+//    case 8:
+//        cos();
+//        break;
+//
+//    case 9:
+//        tan();
+//        break;
+//
+//    case 10:
+//        ln();
+//        break;
+//
+//    case 11:
+//        log();
+//        break;
+//
+//    case 12:
+//        abs();
+//        break;
+//
+//    case 13:
+//        pow();
+//        break;
+//
+//    case 14:
+//        exit();
+//        break;
+//    }
