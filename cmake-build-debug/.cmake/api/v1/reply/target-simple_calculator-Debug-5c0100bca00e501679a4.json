@@ -70,8 +70,7 @@
 			"sourceIndexes" : 
 			[
 				0,
-				2,
-				3
+				2
 			]
 		}
 	],
@@ -109,16 +108,14 @@
 			"sourceIndexes" : 
 			[
 				0,
-				2,
-				3
+				2
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				1,
-				4
+				1
 			]
 		}
 	],
@@ -140,17 +137,6 @@
 			"compileGroupIndex" : 0,
 			"path" : "main.cpp",
 			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "scientific.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "scientific.h",
-			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"

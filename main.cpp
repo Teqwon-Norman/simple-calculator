@@ -9,25 +9,84 @@ int main()
 
     do {
         mode = calc.menu();
+        double a, b;
 
-        switch (mode)
-        {
+        switch (mode) {
             case 1:
-                calc.add();
+                std::cout << "**************** ADDING ****************" << std::endl;
+                std::cout << "Enter first number: ";
+                while (!(std::cin >> a)) {
+                    std::cout << "ERROR: Please enter a number" << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(INT64_MAX, '\n');
+                }
+                std::cin.ignore(INT64_MAX, '\n');
+
+                std::cout << "Enter second number: ";
+                while (!(std::cin >> b)) {
+                    std::cout << "ERROR: Please enter a number" << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(INT64_MAX, '\n');
+                }
+                std::cin.ignore(INT64_MAX, '\n');
+                calc.add(a, b);
                 break;
 
             case 2:
-                calc.subtract();
+                std::cout << "**************** SUBTRACTING ****************" << std::endl;
+                std::cout << "Enter first number: ";
+                while (!(std::cin >> a)) {
+                    std::cout << "ERROR: Please enter a number" << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(INT64_MAX, '\n');
+                }
+                std::cout << "Enter second number: ";
+                while (!(std::cin >> b)) {
+                    std::cout << "ERROR: Please enter a number" << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(INT64_MAX, '\n');
+                }
+                calc.subtract(a, b);
                 break;
 
             case 3:
-                calc.multiply();
+                std::cout << "**************** MULTIPLYING ****************" << std::endl;
+                std::cout << "Enter first number: ";
+                while (!(std::cin >> a)) {
+                    std::cout << "ERROR: Please enter a number" << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(INT64_MAX, '\n');
+                }
+                std::cout << "Enter second number: ";
+                while (!(std::cin >> b)) {
+                    std::cout << "ERROR: Please enter a number" << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(INT64_MAX, '\n');
+                }
+                calc.multiply(a, b);
                 break;
 
             case 4:
+                std::cout << "**************** DIVIDING ****************" << std::endl;
+                std::cout << "Enter first number: ";
+                while (!(std::cin >> a)) {
+                    std::cout << "ERROR: Please enter a number" << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(INT64_MAX, '\n');
+                }
+                std::cout << "Enter second number: ";
+                while (!(std::cin >> b)) {
+                    std::cout << "ERROR: Please enter a number" << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(INT64_MAX, '\n');
+                }
+
+                b = calc.zeroExceptionHandling(b);
+                if (b == 0)
+                    throw "ERROR";
                 try {
-                    calc.divide();
-                } catch (const char * divideByZeroError) {
+                    calc.divide(a, b);
+                } catch (const char *divideByZeroError) {
                     calc.clearScreen();
                     std::cout << "*************** OUTPUT **************" << std::endl;
                     std::cout << "\t\t" << divideByZeroError << std::endl;
@@ -38,15 +97,29 @@ int main()
                 break;
 
             case 5:
-                calc.square();
+                std::cout << "**************** SQUARING ****************" << std::endl;
+                std::cout << "Enter a number: ";
+                while (!(std::cin >> a)) {
+                    std::cout << "ERROR: Please enter a number" << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(INT64_MAX, '\n');
+                }
+                calc.square(a);
                 break;
 
             case 6:
-                calc.sqrt();
-                break;
+                std::cout << "**************** SQUARE ROOT ****************" << std::endl;
+                std::cout << "Enter a number: ";
+                while (!(std::cin >> a)) {
+                    std::cout << "ERROR: Please enter a number" << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(INT64_MAX, '\n');
+                }
+                calc.sqrt(a);
+            break;
 
             case 7:
-                calc.deactivateMemory();
+                calc.clearResult();
                 calc.clearScreen();
                 break;
 
@@ -55,10 +128,8 @@ int main()
                 break;
 
             default:
-                std::cout << "Please choose an option (1 - 7)" << std::endl;
+                std::cout << "Please choose an option (1 - 8)" << std::endl;
         }
-    }
-    while (mode != 8);
-
+    } while (mode != 8);
     return 0;
 }

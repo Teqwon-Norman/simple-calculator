@@ -8,6 +8,4 @@ include_directories(.)
 add_executable(simple_calculator
         calculator.cpp
         calculator.h
-        main.cpp
-        scientific.cpp
-        scientific.h)
+        main.cpp)
