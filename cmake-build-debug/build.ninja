@@ -63,13 +63,6 @@ build CMakeFiles/simple_calculator.dir/main.cpp.obj: CXX_COMPILER__simple_calcul
   OBJECT_DIR = CMakeFiles\simple_calculator.dir
   OBJECT_FILE_DIR = CMakeFiles\simple_calculator.dir
 
-build CMakeFiles/simple_calculator.dir/scientific.cpp.obj: CXX_COMPILER__simple_calculator_Debug C$:/Users/teqwo/OneDrive/Desktop/Projects/C++/simple-calculator/scientific.cpp || cmake_object_order_depends_target_simple_calculator
-  DEP_FILE = CMakeFiles\simple_calculator.dir\scientific.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++14
-  INCLUDES = -IC:/Users/teqwo/OneDrive/Desktop/Projects/C++/simple-calculator/.
-  OBJECT_DIR = CMakeFiles\simple_calculator.dir
-  OBJECT_FILE_DIR = CMakeFiles\simple_calculator.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target simple_calculator
@@ -78,7 +71,7 @@ build CMakeFiles/simple_calculator.dir/scientific.cpp.obj: CXX_COMPILER__simple_
 #############################################
 # Link the executable simple_calculator.exe
 
-build simple_calculator.exe: CXX_EXECUTABLE_LINKER__simple_calculator_Debug CMakeFiles/simple_calculator.dir/calculator.cpp.obj CMakeFiles/simple_calculator.dir/main.cpp.obj CMakeFiles/simple_calculator.dir/scientific.cpp.obj
+build simple_calculator.exe: CXX_EXECUTABLE_LINKER__simple_calculator_Debug CMakeFiles/simple_calculator.dir/calculator.cpp.obj CMakeFiles/simple_calculator.dir/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\simple_calculator.dir
