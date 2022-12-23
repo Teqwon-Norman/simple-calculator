@@ -22,6 +22,7 @@ public:
     void sqrt(double& a);
     static void clearScreen() ;
     static void pauseExecution();
+    double& getResult() { return result; };
     void clearResult() { result = 0.0; };
     static double zeroExceptionHandling(double& n);
     static int menu();
