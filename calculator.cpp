@@ -28,7 +28,7 @@ int Calculator::menu()
 
 void Calculator::add(double &a, double &b)
 {
-    result += a + b;
+    result = a + b;
     clearScreen();
     std::cout << "***************** OUTPUT ****************" << std::endl;
     std::cout << "\t\t" << a << " + " << b << " = " << result << std::endl;
@@ -39,7 +39,7 @@ void Calculator::add(double &a, double &b)
 
 void Calculator::subtract(double &a, double &b)
 {
-    result -= a - b;
+    result = a - b;
     clearScreen();
     std::cout << "***************** OUTPUT ****************" << std::endl;
     std::cout << "\t\t" << a << " - " << b << " = " << result << std::endl;
@@ -50,7 +50,7 @@ void Calculator::subtract(double &a, double &b)
 
 void Calculator::multiply(double &a, double &b)
 {
-        result += a * b;
+        result = a * b;
         clearScreen();
         std::cout << "***************** OUTPUT ****************" << std::endl;
         std::cout << "\t\t" << a << " * " << b << " = " << result << std::endl;
@@ -61,7 +61,7 @@ void Calculator::multiply(double &a, double &b)
 
 void Calculator::divide(double &a, double &b)
 {
-        result += a / b;
+        result = a / b;
         std::cout << "***************** OUTPUT ****************" << std::endl;
         std::cout << "\t\t" << a << " / " << b << " = " << result << std::endl;
         std::cout << "*****************************************" << std::endl;
@@ -70,7 +70,7 @@ void Calculator::divide(double &a, double &b)
 }
 
 void Calculator::square(double &a) {
-        result += a * a;
+        result = a * a;
         clearScreen();
         std::cout << "***************** OUTPUT ****************" << std::endl;
         std::cout << "\t\t" << a << " ^ " << a << " = " << result << std::endl;
