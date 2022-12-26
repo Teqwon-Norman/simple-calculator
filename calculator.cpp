@@ -2,7 +2,7 @@
 #include "calculator.h"
 
 Calculator::Calculator() { // constructor implementation
-    result = 0.0;
+    result = 0;
 }
 
 Calculator::~Calculator() = default; // defines a trivial destructor for me
@@ -16,6 +16,9 @@ int Calculator::menu()
     std::cout << "**********************************************" << std::endl;
     std::cout << "Select a mode below:" << std::endl;
     std::cout << "1.\tAdd\n2.\tSubtract\n3.\tMultiply\n4.\tDivide\n5.\tSquare\n6.\tSquare Root\n7.\tClear\n8.\tExit" << std::endl;
+    std::cout << "**********************************************" << std::endl;
+    displayMemory();
+    std::cout << "**********************************************" << std::endl;
     std::cout << "\n";
 
     while(!(std::cin >> mode)) {
