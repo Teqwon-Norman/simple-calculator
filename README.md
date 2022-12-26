@@ -26,7 +26,7 @@ This project was created for my Morgan State University peers who are just start
 ***
 
 ### Calculator++ Visual
-![calculator++.png](..%2F..%2F..%2F..%2F..%2FVideos%2FCaptures%2Fcalculator%2B%2B.png)
+![calculator++](https://user-images.githubusercontent.com/73213667/209573547-870fee4b-e600-4e25-8cbf-903c369d3d16.png)
 ***
 
 ### EXTRA INFORMATION
