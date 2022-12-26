@@ -1,6 +1,7 @@
 #ifndef CALCULATOR_H
 #define CALCULATOR_H
 
+#include <iostream>
 #include <string>
 #include <cmath>
 
@@ -20,11 +21,12 @@ public:
     void divide(double& a, double& b);
     void square(double& a);
     void sqrt(double& a);
-    static void clearScreen() ;
+    static void clearScreen();
     static void pauseExecution();
-    double& getResult() { return result; };
-    void clearResult() { result = 0.0; };
+    double getResult() { return result; };
+    void displayMemory() { std::cout << "Result: " << result << std::endl;  }
+    void clearResult() { result = 0; };
     static double zeroExceptionHandling(double& n);
-    static int menu();
+    int menu();
 };
 #endif
