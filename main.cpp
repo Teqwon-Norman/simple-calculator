@@ -16,7 +16,7 @@ int main()
 
         switch (mode) {
             case 1:
-                std::cout << "**************** ADDING ****************" << std::endl;
+                std::cout << "\n****************** ADDING ********************" << std::endl;
                 if (!a) {
                     std::cout << "Enter first number: ";
                     while (!(std::cin >> a)) {
@@ -38,7 +38,7 @@ int main()
                 break;
 
             case 2:
-                std::cout << "**************** SUBTRACTING ****************" << std::endl;
+                std::cout << "\n****************** SUBTRACTING *******************" << std::endl;
                 if (a == 0) {
                     std::cout << "Enter first number: ";
                     while (!(std::cin >> a)) {
@@ -59,7 +59,7 @@ int main()
                 break;
 
             case 3:
-                std::cout << "**************** MULTIPLYING ****************" << std::endl;
+                std::cout << "\n****************** MULTIPLYING *******************" << std::endl;
                 if (a == 0) {
                     std::cout << "Enter first number: ";
                     while (!(std::cin >> a)) {
@@ -80,7 +80,7 @@ int main()
                 break;
 
             case 4:
-                std::cout << "**************** DIVIDING ****************" << std::endl;
+                std::cout << "\n****************** DIVIDING *******************" << std::endl;
                 if (a == 0) {
                     std::cout << "Enter first number: ";
                     while (!(std::cin >> a)) {
@@ -114,7 +114,7 @@ int main()
                 break;
 
             case 5:
-                std::cout << "**************** SQUARING ****************" << std::endl;
+                std::cout << "\n****************** SQUARING *******************" << std::endl;
                 if (a == 0) {
                     std::cout << "Enter a number: ";
                     while (!(std::cin >> a)) {
@@ -128,7 +128,7 @@ int main()
                 break;
 
             case 6:
-                std::cout << "**************** SQUARE ROOT ****************" << std::endl;
+                std::cout << "\n****************** SQUARE ROOT *******************" << std::endl;
                 if (a == 0) {
                     std::cout << "Enter a number: ";
                     while (!(std::cin >> a)) {
