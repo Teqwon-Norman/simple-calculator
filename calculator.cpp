@@ -1,13 +1,19 @@
 #include <iostream>
 #include "calculator.h"
 
-Calculator::Calculator() { // constructor implementation
+Calculator::Calculator()
+    /* When we create an instance of the Calculator object
+       we set our result variable to 0 */
+{
     result = 0;
 }
 
-Calculator::~Calculator() = default; // defines a trivial destructor for me
+Calculator::~Calculator() = default; // Default implementation of a destructor
 
 int Calculator::menu()
+    /* Displays a menu to the terminal that instructs the user on
+       how to use the calculator for certain tasks,
+      just like buttons on a calculator. */
 {
     int mode;
 
@@ -30,6 +36,8 @@ int Calculator::menu()
 }
 
 void Calculator::add(double &a, double &b)
+    /* Takes in two doubles and adds the numbers
+     * saving/updating the result in our private memory variable */
 {
     result = a + b;
     clearScreen();
@@ -41,6 +49,8 @@ void Calculator::add(double &a, double &b)
 }
 
 void Calculator::subtract(double &a, double &b)
+    /* Takes in two doubles and subtracts the numbers
+     * saving/updating the result in our private memory variable */
 {
     result = a - b;
     clearScreen();
@@ -52,6 +62,8 @@ void Calculator::subtract(double &a, double &b)
 }
 
 void Calculator::multiply(double &a, double &b)
+    /* Takes in two doubles and multiplies the numbers
+     * saving/updating the result in our private memory variable */
 {
         result = a * b;
         clearScreen();
@@ -63,6 +75,8 @@ void Calculator::multiply(double &a, double &b)
 }
 
 void Calculator::divide(double &a, double &b)
+    /* Takes in two doubles and divides the numbers
+     * saving/updating the result in our private memory variable. */
 {
         result = a / b;
         std::cout << "***************** OUTPUT ****************" << std::endl;
@@ -73,6 +87,8 @@ void Calculator::divide(double &a, double &b)
 }
 
 void Calculator::square(double &a) {
+    /* Takes in a number and squares it if the result is zero,
+     * otherwise it squares the current result and updates it.  */
         result = a * a;
         clearScreen();
         std::cout << "***************** OUTPUT ****************" << std::endl;
@@ -83,6 +99,8 @@ void Calculator::square(double &a) {
 }
 
 void Calculator::sqrt(double &a)
+    /* Takes in a number and gets the square root of it if the result is zero,
+     * otherwise it gets the square root of the current result and updates it.  */
 {
         result = std::sqrt(a);
         clearScreen();
@@ -93,18 +111,26 @@ void Calculator::sqrt(double &a)
         clearScreen();
 }
 
-void Calculator::clearScreen() {
-    std::cout << std::string(30, '\n');
+void Calculator::clearScreen()
+    /* Prints out 50 newline characters to act as
+     * if we are clearing the output from the terminal. */
+{
+    std::cout << std::string(50, '\n');
 }
 
-void Calculator::pauseExecution() {
+void Calculator::pauseExecution()
+{
     std::string input;
     std::cout << "type any key and hit enter to continue..." << std::endl;
 
-    while (input.empty()) { std::cin >> input; }
+    while (input.size() < 1) { std::cin >> input; }
 }
 
-double Calculator::zeroExceptionHandling(double &n) {
+double Calculator::zeroExceptionHandling(double &n)
+    /* Catches and handles the divide by zero exception
+     * by returning the string value "Error" when a user
+     * tries to divide by zero */
+{
     if (n == 0) {
         throw "Error";
     } else {

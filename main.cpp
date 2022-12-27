@@ -1,11 +1,12 @@
 #include <iostream>
-#include "calculator.h"
+#include "calculator.h" // We are importing our calculator header file here
 
 int main()
 {
     int mode;
-    Calculator calc;
+    Calculator calc; // Object instance of Calculator class named calc which sets our result value to zero upon creation
 
+    // Do-while loop and Switch case statements to structure our console application
     do {
         mode = calc.menu();
         double a {}, b {};
@@ -16,9 +17,13 @@ int main()
 
         switch (mode) {
             case 1:
+                calc.clearScreen();
                 std::cout << "\n****************** ADDING ********************" << std::endl;
                 if (!a) {
                     std::cout << "Enter first number: ";
+                    /* This while loop you see throughout the code is our user input validation
+                       We use this to make sure the user enters nothing except numbers
+                       This is a basic security issue that should always be handled */
                     while (!(std::cin >> a)) {
                         std::cout << "ERROR: Please enter a number" << std::endl;
                         std::cin.clear();
@@ -38,6 +43,7 @@ int main()
                 break;
 
             case 2:
+                calc.clearScreen();
                 std::cout << "\n****************** SUBTRACTING *******************" << std::endl;
                 if (a == 0) {
                     std::cout << "Enter first number: ";
@@ -59,6 +65,7 @@ int main()
                 break;
 
             case 3:
+                calc.clearScreen();
                 std::cout << "\n****************** MULTIPLYING *******************" << std::endl;
                 if (a == 0) {
                     std::cout << "Enter first number: ";
@@ -80,6 +87,7 @@ int main()
                 break;
 
             case 4:
+                calc.clearScreen();
                 std::cout << "\n****************** DIVIDING *******************" << std::endl;
                 if (a == 0) {
                     std::cout << "Enter first number: ";
@@ -114,8 +122,14 @@ int main()
                 break;
 
             case 5:
+                calc.clearScreen();
                 std::cout << "\n****************** SQUARING *******************" << std::endl;
-                if (a == 0) {
+                if (calc.getResult() != 0) {
+                    a =  calc.getResult();
+                    calc.square(a);
+                }
+
+                else if (a == 0) {
                     std::cout << "Enter a number: ";
                     while (!(std::cin >> a)) {
                         std::cout << "ERROR: Please enter a number" << std::endl;
@@ -128,8 +142,14 @@ int main()
                 break;
 
             case 6:
+                calc.clearScreen();
                 std::cout << "\n****************** SQUARE ROOT *******************" << std::endl;
-                if (a == 0) {
+                if (calc.getResult() != 0) {
+                    a =  calc.getResult();
+                    calc.sqrt(a);
+                }
+
+                else if (a == 0) {
                     std::cout << "Enter a number: ";
                     while (!(std::cin >> a)) {
                         std::cout << "ERROR: Please enter a number" << std::endl;
@@ -147,6 +167,7 @@ int main()
                 break;
 
             case 8:
+                calc.clearScreen();
                 std::cout << "\nThank you for using Calculator++";
                 break;
 
