@@ -21,7 +21,7 @@ This project was created for my Morgan State University peers who are just start
 1. $ git clone https://github.com/Teqwon-Norman/simple-calculator.git
 2. $ cd simple-calculator
 3. $ make
-4. $ ./calculator
+4. $ ./main
 ```
 ***
 
