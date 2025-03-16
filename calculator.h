@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <cstdlib>
 
 class Calculator
 {
@@ -11,9 +12,8 @@ private:
     double result;
 
 public:
-
-    Calculator(); // constructor
-    ~Calculator(); // destructor
+    Calculator();
+    ~Calculator();
 
     void add(double& a, double& b);
     void subtract(double& a, double& b);
@@ -21,12 +21,10 @@ public:
     void divide(double& a, double& b);
     void square(double& a);
     void sqrt(double& a);
-    static void clearScreen();
-    static void pauseExecution();
+    static void clearScreen() { std::system("clear"); }
     double getResult() { return result; };
     void displayMemory() { std::cout << "Result: " << result << std::endl;  }
     void clearResult() { result = 0; };
-    static double zeroExceptionHandling(double& n);
     int menu();
 };
 #endif

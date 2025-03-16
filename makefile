@@ -1,11 +1,16 @@
-calculator: calculator.o main.o
-	g++ calculator.o main.o -o calculator
+CC=g++
+CPPFLAGS=-Wall -Wextra -pedantic -std=$(VERSION) -g $(LDFLAGS)
+PROG=main
+OBJS=$(PROG).cpp calculator.cpp
+LDFLAGS=-fsanitize=address,undefined
+VERSION=c++17
 
-main.o: main.cpp
-	g++ -c main.cpp
+all: $(PROG)
 
-calculator.o: calculator.cpp
-	g++ -c calculator.cpp
+$(PROG): $(OBJS)
+
+.PHONY: clean
 
 clean:
-	rm *.o calculator
+	@find . \( -name "*.dSYM" -o -name "*.tar.gz" \) -exec rm -r {} +
+	rm -f *.out $(PROG)

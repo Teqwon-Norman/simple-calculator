@@ -1,14 +1,24 @@
 #include <iostream>
+#include <iomanip>
+
 #include "calculator.h"
 
-Calculator::Calculator() { // constructor implementation
+static void printResult(
+    double& a,
+    double& b,
+    double& result,
+    std::string sign) {
+    std::cout << "\t\t" << a << sign << b << " = "
+        << std::fixed << std::setprecision(0) << result << "\n";
+}
+
+Calculator::Calculator() {
     result = 0;
 }
 
-Calculator::~Calculator() = default; // defines a trivial destructor for me
+Calculator::~Calculator() = default;
 
-int Calculator::menu()
-{
+int Calculator::menu() {
     int mode;
 
     std::cout << "**********************************************" << std::endl;
@@ -29,85 +39,61 @@ int Calculator::menu()
     return mode;
 }
 
-void Calculator::add(double &a, double &b)
-{
+void Calculator::add(double &a, double &b) {
     result = a + b;
+    std::string sign = "+";
     clearScreen();
     std::cout << "***************** OUTPUT ****************" << std::endl;
-    std::cout << "\t\t" << a << " + " << b << " = " << result << std::endl;
+    printResult(a, b, result, sign);
     std::cout << "*****************************************" << std::endl;
-    pauseExecution();
     clearScreen();
 }
 
-void Calculator::subtract(double &a, double &b)
-{
+void Calculator::subtract(double &a, double &b) {
     result = a - b;
+    std::string sign = "-";
     clearScreen();
     std::cout << "***************** OUTPUT ****************" << std::endl;
-    std::cout << "\t\t" << a << " - " << b << " = " << result << std::endl;
+    printResult(a, b, result, sign);
     std::cout << "*****************************************" << std::endl;
-    pauseExecution();
     clearScreen();
 }
 
-void Calculator::multiply(double &a, double &b)
-{
-        result = a * b;
-        clearScreen();
-        std::cout << "***************** OUTPUT ****************" << std::endl;
-        std::cout << "\t\t" << a << " * " << b << " = " << result << std::endl;
-        std::cout << "*****************************************" << std::endl;
-        pauseExecution();
-        clearScreen();
+void Calculator::multiply(double &a, double &b) {
+    result = a * b;
+    std::string sign = "*";
+    clearScreen();
+    std::cout << "***************** OUTPUT ****************" << std::endl;
+    printResult(a, b, result, sign);
+    std::cout << "*****************************************" << std::endl;
+    clearScreen();
 }
 
-void Calculator::divide(double &a, double &b)
-{
-        result = a / b;
-        std::cout << "***************** OUTPUT ****************" << std::endl;
-        std::cout << "\t\t" << a << " / " << b << " = " << result << std::endl;
-        std::cout << "*****************************************" << std::endl;
-        pauseExecution();
-        clearScreen();
+void Calculator::divide(double &a, double &b) {
+    result = a / b;
+    std::string sign = "/";
+    std::cout << "***************** OUTPUT ****************" << std::endl;
+    printResult(a, b, result, sign);
+    std::cout << "*****************************************" << std::endl;
+    clearScreen();
 }
 
 void Calculator::square(double &a) {
-        result = a * a;
-        clearScreen();
-        std::cout << "***************** OUTPUT ****************" << std::endl;
-        std::cout << "\t\t" << a << " ^ " << a << " = " << result << std::endl;
-        std::cout << "*****************************************" << std::endl;
-        pauseExecution();
-        clearScreen();
+    result = a * a;
+    clearScreen();
+    std::cout << "***************** OUTPUT ****************" << std::endl;
+    std::cout << "\t\t" << a << " ^ " << a << " = "
+        << std::fixed << std::setprecision(0) << result << "\n";
+    std::cout << "*****************************************" << std::endl;
+    clearScreen();
 }
 
-void Calculator::sqrt(double &a)
-{
-        result = std::sqrt(a);
-        clearScreen();
-        std::cout << "***************** OUTPUT ****************" << std::endl;
-        std::cout << "\t" << "SQUARE ROOT " << a << " = " << result << std::endl;
-        std::cout << "*****************************************" << std::endl;
-        pauseExecution();
-        clearScreen();
-}
-
-void Calculator::clearScreen() {
-    std::cout << std::string(30, '\n');
-}
-
-void Calculator::pauseExecution() {
-    std::string input;
-    std::cout << "type any key and hit enter to continue..." << std::endl;
-
-    while (input.empty()) { std::cin >> input; }
-}
-
-double Calculator::zeroExceptionHandling(double &n) {
-    if (n == 0) {
-        throw "Error";
-    } else {
-        return n;
-    }
+void Calculator::sqrt(double &a) {
+    result = std::sqrt(a);
+    clearScreen();
+    std::cout << "***************** OUTPUT ****************" << std::endl;
+    std::cout << "\t" << "SQUARE ROOT " << a << " = "
+        << std::fixed << std::setprecision(0) << result << "\n";
+    std::cout << "*****************************************" << std::endl;
+    clearScreen();
 }

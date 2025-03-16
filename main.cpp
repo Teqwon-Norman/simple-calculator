@@ -1,4 +1,6 @@
 #include <iostream>
+#include <iomanip>
+
 #include "calculator.h"
 
 int main()
@@ -93,23 +95,17 @@ int main()
 
                 std::cout << "Enter second number: ";
                 while (!(std::cin >> b)) {
-                    std::cout << "ERROR: Please enter a number" << std::endl;
+                    std::cout << "ERROR: Please enter a number\n";
                     std::cin.clear();
                     std::cin.ignore(INT64_MAX, '\n');
                 }
 
-                b = calc.zeroExceptionHandling(b);
-                if (b == 0)
-                    throw "ERROR";
-                try {
+                if (b == 0) {
+                    calc.clearResult();
+                    calc.clearScreen();
+                } else {
                     calc.divide(a, b);
-                } catch (const char *divideByZeroError) {
-                    calc.clearScreen();
-                    std::cout << "*************** OUTPUT **************" << std::endl;
-                    std::cout << "\t\t" << divideByZeroError << std::endl;
-                    std::cout << "*************************************" << std::endl;
-                    calc.pauseExecution();
-                    calc.clearScreen();
+                    break;
                 }
                 break;
 
@@ -147,7 +143,7 @@ int main()
                 break;
 
             case 8:
-                std::cout << "\nThank you for using Calculator++";
+                std::cout << "\nThank you for using Calculator++\n";
                 break;
 
             default:
