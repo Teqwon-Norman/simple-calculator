@@ -21,7 +21,10 @@ public:
     void divide(double& a, double& b);
     void square(double& a);
     void sqrt(double& a);
-    static void clearScreen() { std::system("clear"); }
+    static void clearScreen() {
+        std::cout.flush();
+        std::system("clear"); 
+    }
     double getResult() { return result; };
     void displayMemory() { std::cout << "Result: " << result << std::endl;  }
     void clearResult() { result = 0; };
